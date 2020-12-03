@@ -17,6 +17,8 @@ namespace SimpleFileManager
         private string filePath = @"E:\";
         private bool isFile =false ;
         private string currentlySelectedItemName = "";
+        List<FileInfo> search = new List<FileInfo>();
+        private bool isSearch = false;
         public Form1()
         {
             InitializeComponent();
@@ -163,19 +165,36 @@ namespace SimpleFileManager
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             currentlySelectedItemName = e.Item.Text;
-           
-            FileAttributes fileAttr = File.GetAttributes(filePath + @"\" + currentlySelectedItemName);
-            
-            if((fileAttr & FileAttributes.Directory) == FileAttributes.Directory)
+            FileAttributes fileAttr=new FileAttributes();
+            if (isSearch == false)
             {
-                isFile = false;
+                fileAttr  = File.GetAttributes(filePath + @"\" + currentlySelectedItemName);
                 filePathTextBox.Text = filePath + @"\" + currentlySelectedItemName;
             }
             else
             {
-                isFile = true;
-                filePathTextBox.Text = filePath + @"\" + currentlySelectedItemName;
+                foreach(FileInfo file in search)
+                {
+                    if (file.Name == currentlySelectedItemName)
+                    {
+                        fileAttr = File.GetAttributes(file.FullName);
+                        filePathTextBox.Text = file.FullName;
+                    }
+
+                }
             }
+                if ((fileAttr & FileAttributes.Directory) == FileAttributes.Directory)
+                {
+                    isFile = false;
+                   
+                }
+                else
+                {
+                    isFile = true;
+                    
+                }
+            
+           
         }
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -184,24 +203,63 @@ namespace SimpleFileManager
         }
 
         private void backButton_Click(object sender, EventArgs e)
+        {  if (isSearch == false)
+            {
+                goBack();
+                loadButtonAction();
+            }
+            else
+            {
+                loadButtonAction();
+            }
+        }
+
+      
+
+       
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string property = toolStripTextBox1.Text;
+            search.Clear();
+            Facade.Search(search, property, filePath);
+            FileInfo[] files = search.ToArray();
+            listView1.Clear();
+            Signs(files);
+            isSearch = true;
+        }
+
+        private void changeASequenceOfLetterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facade.ChangeSequenceOfLetter(filePathTextBox.Text,toolStripTextBox2.Text, toolStripTextBox3.Text);
+            isFile = true;
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(isFile==true)
+            {
+                goBack();
+            }
+            Facade.Create(filePath, toolStripTextBox4.Text);
+            loadButtonAction();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facade.Delete(filePathTextBox.Text);
             goBack();
             loadButtonAction();
         }
 
-        private void Search_Click(object sender, EventArgs e)
+        private void rightRegistrToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string property = textBox1.Text;
-            List<FileInfo> search = new List<FileInfo>();
-            Facade.Search(search,property,filePath);
-            FileInfo[] files = search.ToArray();
-            Signs(files);
-        }
-
-        private void ChangeSequenceofLetter_Click(object sender, EventArgs e)
-        {
-            Facade.ChangeSequenceOfLetter(filePathTextBox.Text, textBox2.Text, textBox3.Text);
-            isFile = true;
+            Facade.RightRegister(filePathTextBox.Text);
         }
     }
 }

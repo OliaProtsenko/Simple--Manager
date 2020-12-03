@@ -39,16 +39,27 @@
             this.fileNameLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.fileTypeLabel = new System.Windows.Forms.Label();
-            this.Search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.ChangeSequenceofLetter = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.changeASequenceOfLetterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.forWhatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.rightRegistrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(3, 11);
+            this.backButton.Location = new System.Drawing.Point(3, 31);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(75, 23);
             this.backButton.TabIndex = 0;
@@ -58,7 +69,7 @@
             // 
             // goButton
             // 
-            this.goButton.Location = new System.Drawing.Point(1223, 11);
+            this.goButton.Location = new System.Drawing.Point(1223, 30);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 23);
             this.goButton.TabIndex = 1;
@@ -70,9 +81,9 @@
             // 
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.iconList;
-            this.listView1.Location = new System.Drawing.Point(3, 41);
+            this.listView1.Location = new System.Drawing.Point(3, 73);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(681, 497);
+            this.listView1.Size = new System.Drawing.Size(1283, 497);
             this.listView1.SmallImageList = this.iconList;
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -97,7 +108,7 @@
             // 
             // filePathTextBox
             // 
-            this.filePathTextBox.Location = new System.Drawing.Point(84, 13);
+            this.filePathTextBox.Location = new System.Drawing.Point(84, 31);
             this.filePathTextBox.Name = "filePathTextBox";
             this.filePathTextBox.Size = new System.Drawing.Size(1133, 22);
             this.filePathTextBox.TabIndex = 3;
@@ -138,57 +149,133 @@
             this.fileTypeLabel.TabIndex = 7;
             this.fileTypeLabel.Text = "--";
             // 
-            // Search
+            // menuStrip1
             // 
-            this.Search.Location = new System.Drawing.Point(12, 544);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 23);
-            this.Search.TabIndex = 8;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
-            this.Search.Click += new System.EventHandler(this.Search_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.optionsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1298, 28);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
+            // fileToolStripMenuItem
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 545);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 9;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
-            // ChangeSequenceofLetter
+            // createToolStripMenuItem
             // 
-            this.ChangeSequenceofLetter.Location = new System.Drawing.Point(15, 573);
-            this.ChangeSequenceofLetter.Name = "ChangeSequenceofLetter";
-            this.ChangeSequenceofLetter.Size = new System.Drawing.Size(75, 23);
-            this.ChangeSequenceofLetter.TabIndex = 10;
-            this.ChangeSequenceofLetter.Text = "Change";
-            this.ChangeSequenceofLetter.UseVisualStyleBackColor = true;
-            this.ChangeSequenceofLetter.Click += new System.EventHandler(this.ChangeSequenceofLetter_Click);
+            this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nameToolStripMenuItem});
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.createToolStripMenuItem.Text = "Create ";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
-            // textBox2
+            // nameToolStripMenuItem
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 574);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 11;
+            this.nameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox4});
+            this.nameToolStripMenuItem.Name = "nameToolStripMenuItem";
+            this.nameToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.nameToolStripMenuItem.Text = "Name";
             // 
-            // textBox3
+            // toolStripTextBox4
             // 
-            this.textBox3.Location = new System.Drawing.Point(229, 573);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 12;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(100, 27);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem,
+            this.changeASequenceOfLetterToolStripMenuItem,
+            this.rightRegistrToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
+            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
+            // 
+            // changeASequenceOfLetterToolStripMenuItem
+            // 
+            this.changeASequenceOfLetterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.whatToolStripMenuItem,
+            this.forWhatToolStripMenuItem});
+            this.changeASequenceOfLetterToolStripMenuItem.Name = "changeASequenceOfLetterToolStripMenuItem";
+            this.changeASequenceOfLetterToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
+            this.changeASequenceOfLetterToolStripMenuItem.Text = "Change a sequence of letter";
+            this.changeASequenceOfLetterToolStripMenuItem.Click += new System.EventHandler(this.changeASequenceOfLetterToolStripMenuItem_Click);
+            // 
+            // whatToolStripMenuItem
+            // 
+            this.whatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox2});
+            this.whatToolStripMenuItem.Name = "whatToolStripMenuItem";
+            this.whatToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.whatToolStripMenuItem.Text = "What";
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 27);
+            // 
+            // forWhatToolStripMenuItem
+            // 
+            this.forWhatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox3});
+            this.forWhatToolStripMenuItem.Name = "forWhatToolStripMenuItem";
+            this.forWhatToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.forWhatToolStripMenuItem.Text = "For What";
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 27);
+            // 
+            // rightRegistrToolStripMenuItem
+            // 
+            this.rightRegistrToolStripMenuItem.Name = "rightRegistrToolStripMenuItem";
+            this.rightRegistrToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
+            this.rightRegistrToolStripMenuItem.Text = "Right registr";
+            this.rightRegistrToolStripMenuItem.Click += new System.EventHandler(this.rightRegistrToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 651);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.ChangeSequenceofLetter);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Search);
             this.Controls.Add(this.fileTypeLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.fileNameLabel);
@@ -197,9 +284,13 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.backButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,11 +307,21 @@
         private System.Windows.Forms.Label fileNameLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label fileTypeLabel;
-        private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button ChangeSequenceofLetter;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeASequenceOfLetterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rightRegistrToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem whatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripMenuItem forWhatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 
