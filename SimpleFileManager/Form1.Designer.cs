@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.backButton = new System.Windows.Forms.Button();
-            this.goButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.filePathTextBox = new System.Windows.Forms.TextBox();
@@ -44,16 +43,24 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
+            this.goToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.goToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeASequenceOfLetterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.whatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.forWhatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.goToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rightRegistrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.back1 = new System.Windows.Forms.Button();
+            this.filePathTextBox2 = new System.Windows.Forms.TextBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,23 +74,13 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // goButton
-            // 
-            this.goButton.Location = new System.Drawing.Point(1223, 30);
-            this.goButton.Name = "goButton";
-            this.goButton.Size = new System.Drawing.Size(75, 23);
-            this.goButton.TabIndex = 1;
-            this.goButton.Text = "Go";
-            this.goButton.UseVisualStyleBackColor = true;
-            this.goButton.Click += new System.EventHandler(this.goButton_Click);
-            // 
             // listView1
             // 
             this.listView1.HideSelection = false;
             this.listView1.LargeImageList = this.iconList;
-            this.listView1.Location = new System.Drawing.Point(3, 73);
+            this.listView1.Location = new System.Drawing.Point(3, 60);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1283, 497);
+            this.listView1.Size = new System.Drawing.Size(597, 497);
             this.listView1.SmallImageList = this.iconList;
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -110,7 +107,7 @@
             // 
             this.filePathTextBox.Location = new System.Drawing.Point(84, 31);
             this.filePathTextBox.Name = "filePathTextBox";
-            this.filePathTextBox.Size = new System.Drawing.Size(1133, 22);
+            this.filePathTextBox.Size = new System.Drawing.Size(516, 22);
             this.filePathTextBox.TabIndex = 3;
             // 
             // label1
@@ -174,7 +171,8 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nameToolStripMenuItem});
+            this.nameToolStripMenuItem,
+            this.goToolStripMenuItem2});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
             this.createToolStripMenuItem.Text = "Create ";
@@ -193,6 +191,13 @@
             this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
             this.toolStripTextBox4.Size = new System.Drawing.Size(100, 27);
+            // 
+            // goToolStripMenuItem2
+            // 
+            this.goToolStripMenuItem2.Name = "goToolStripMenuItem2";
+            this.goToolStripMenuItem2.Size = new System.Drawing.Size(132, 26);
+            this.goToolStripMenuItem2.Text = "Go";
+            this.goToolStripMenuItem2.Click += new System.EventHandler(this.goToolStripMenuItem2_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -214,7 +219,8 @@
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
+            this.toolStripTextBox1,
+            this.goToolStripMenuItem});
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.searchToolStripMenuItem.Text = "Search";
@@ -226,11 +232,19 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 27);
             // 
+            // goToolStripMenuItem
+            // 
+            this.goToolStripMenuItem.Name = "goToolStripMenuItem";
+            this.goToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.goToolStripMenuItem.Text = "Go";
+            this.goToolStripMenuItem.Click += new System.EventHandler(this.goToolStripMenuItem_Click);
+            // 
             // changeASequenceOfLetterToolStripMenuItem
             // 
             this.changeASequenceOfLetterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.whatToolStripMenuItem,
-            this.forWhatToolStripMenuItem});
+            this.forWhatToolStripMenuItem,
+            this.goToolStripMenuItem1});
             this.changeASequenceOfLetterToolStripMenuItem.Name = "changeASequenceOfLetterToolStripMenuItem";
             this.changeASequenceOfLetterToolStripMenuItem.Size = new System.Drawing.Size(277, 26);
             this.changeASequenceOfLetterToolStripMenuItem.Text = "Change a sequence of letter";
@@ -264,6 +278,13 @@
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 27);
             // 
+            // goToolStripMenuItem1
+            // 
+            this.goToolStripMenuItem1.Name = "goToolStripMenuItem1";
+            this.goToolStripMenuItem1.Size = new System.Drawing.Size(152, 26);
+            this.goToolStripMenuItem1.Text = "Go";
+            this.goToolStripMenuItem1.Click += new System.EventHandler(this.goToolStripMenuItem1_Click);
+            // 
             // rightRegistrToolStripMenuItem
             // 
             this.rightRegistrToolStripMenuItem.Name = "rightRegistrToolStripMenuItem";
@@ -271,18 +292,72 @@
             this.rightRegistrToolStripMenuItem.Text = "Right registr";
             this.rightRegistrToolStripMenuItem.Click += new System.EventHandler(this.rightRegistrToolStripMenuItem_Click);
             // 
+            // back1
+            // 
+            this.back1.Location = new System.Drawing.Point(684, 30);
+            this.back1.Name = "back1";
+            this.back1.Size = new System.Drawing.Size(75, 23);
+            this.back1.TabIndex = 14;
+            this.back1.Text = "back";
+            this.back1.UseVisualStyleBackColor = true;
+            this.back1.Click += new System.EventHandler(this.back1_Click);
+            // 
+            // filePathTextBox2
+            // 
+            this.filePathTextBox2.Location = new System.Drawing.Point(765, 30);
+            this.filePathTextBox2.Name = "filePathTextBox2";
+            this.filePathTextBox2.Size = new System.Drawing.Size(521, 22);
+            this.filePathTextBox2.TabIndex = 15;
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.LargeImageList = this.iconList;
+            this.listView2.Location = new System.Drawing.Point(684, 60);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(614, 497);
+            this.listView2.SmallImageList = this.iconList;
+            this.listView2.TabIndex = 16;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView2_ItemSelectionChanged);
+            this.listView2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView2_MouseDoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(606, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "-->";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(606, 221);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "<--";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 651);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.filePathTextBox2);
+            this.Controls.Add(this.back1);
             this.Controls.Add(this.fileTypeLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.fileNameLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.goButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -299,7 +374,6 @@
         #endregion
 
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button goButton;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList iconList;
         private System.Windows.Forms.TextBox filePathTextBox;
@@ -322,6 +396,14 @@
         private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem goToolStripMenuItem2;
+        private System.Windows.Forms.Button back1;
+        private System.Windows.Forms.TextBox filePathTextBox2;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -29,6 +29,14 @@ namespace SimpleFileManager
             }
 
         }
+        static public void CutAndPaste(string pathFrom,string pathTo)
+        {
+            FileInfo f = new FileInfo(pathFrom);
+            
+            System.IO.File.Move(pathFrom, pathTo+@"\"+f.Name);
+            
+        }
+        
         static public void Create(string filePath, string name)
         {
             string fileName = filePath + @"\" + name + ".txt";
@@ -48,7 +56,7 @@ namespace SimpleFileManager
                 }
 
                 // Create a new file     
-                using (StreamWriter sw = File.CreateText(fileName)) ;
+                using (StreamWriter sw = File.CreateText(fileName));
 
 
                 // Open the stream and read it back.    

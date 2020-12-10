@@ -17,8 +17,12 @@ namespace SimpleFileManager
         {
             FileManager.Create(filePath, type);
         }
-        public static void Search(List<FileInfo> search, string property, string filePath)
+        public static void CutAndPaste(string pathFrom,string pathTo)
         {
+            FileManager.CutAndPaste(pathFrom, pathTo);
+        }
+        public static void Search(List<FileInfo> search, string property, string filePath)
+        {   
             TxtAnalizator.Analize(search, property, filePath);
         }
         public static void ChangeSequenceOfLetter(string filePath, string what, string forwhat)
